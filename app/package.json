@@ -17,7 +17,8 @@
     "electron-debug": "^1",
     "electron-is-dev": "^0.1",
     "electron-window-state": "^3",
-    "lodash": "^4"
+    "lodash": "^4",
+    "physics-sim": "https://github.com/theGordHoard/physics-sim"
   },
   "config": {
     "url": "index.html",
