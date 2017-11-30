@@ -20,6 +20,7 @@ module.exports = function update (options) {
 
   try {
     // Don't try to update on development
+    // eslint-disable-next-line no-useless-escape
     if (!process.execPath.match(/[\\\/]electron-prebuilt/)) {
       console.info('Checking for updates at %s', updaterFeedUrl)
       autoUpdater.setFeedURL(updaterFeedUrl)
