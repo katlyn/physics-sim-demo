@@ -1,13 +1,13 @@
 {
-  "name": "SkelEktron",
-  "productName": "SkelEktron",
-  "description": "Electron Template Desktop Application",
-  "version": "0.0.6",
-  "homepage": "https://github.com/BZCoding/SkelEktron",
+  "name": "physics-sim-demo",
+  "productName": "Physics Sim Demo",
+  "description": "Demonstrates a basic physics simulator",
+  "version": "0.0.1",
+  "homepage": "https://github.com/theGordHoard/physics-sim-demo",
   "author": {
-    "name": "BZ Coding",
-    "email": "hello@bzcoding.com",
-    "url": "https://bzcoding.com/"
+    "name": "theGordHoard",
+    "email": "hello@thegordhoard.org",
+    "url": "https://gordhoard.org/"
   },
   "license": "MIT",
   "main": "main.js",

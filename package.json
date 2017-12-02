@@ -1,16 +1,12 @@
 {
-  "name": "SkelEktron",
+  "name": "physics-sim-demo",
   "description": "Unofficial Electron Template Application",
-  "version": "0.0.6",
-  "author": {
-    "name": "Vito Tardia / BZ Coding",
-    "email": "vito@bzcoding.com",
-    "url": "https://bzcoding.com/"
-  },
+  "version": "0.0.1",
+  "author": "Izac Lorimer",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BZCoding/SkelEktron.git"
+    "url": "https://github.com/theGordHoard/physics-sim-demo.git"
   },
   "main": "main.js",
   "scripts": {
@@ -49,18 +45,14 @@
       "cp"
     ]
   },
-  "pre-commit": [
-    "lint",
-    "unit"
-  ],
   "keywords": [
     "electron-app",
     "electron",
     "boilerplate"
   ],
   "build": {
-    "appId": "com.bzcoding.skelektron",
-    "productName": "SkelEktron",
+    "appId": "org.gordhoard.physics-sim-demo",
+    "productName": "Physics-sim Demo",
     "dmg": {
       "iconSize": 120,
       "iconTextSize": 14,
@@ -79,13 +71,12 @@
       ]
     },
     "mac": {
-      "category": "public.app-category.business"
+      "category": "public.app-category.science"
     },
     "linux": {
       "category": "Development"
     },
-    "win": {
-    }
+    "win": {}
   },
   "devDependencies": {
     "async": "^2",
