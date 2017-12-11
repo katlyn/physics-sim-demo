@@ -129,8 +129,9 @@ class PhysicsSystem {
    * Create a new system.
    * @param {PhysicsObject[]} objects - the objects to add to the system
    */
-  constructor (objects) {
+  constructor (objects, noGravity) {
     this.objects = objects
+    this.noGravity = noGravity
   }
 
   /**
@@ -140,23 +141,25 @@ class PhysicsSystem {
   tick (time) {
     for (let key in this.objects) {
       let object = this.objects[key]
-      for (let secondaryKey in this.objects) {
-        // Make sure the object does not interact with itself
-        if (key === secondaryKey) continue
+      if (!this.noGravity) {
+        for (let secondaryKey in this.objects) {
+          // Make sure the object does not interact with itself
+          if (key === secondaryKey) continue
 
-        let secondaryObject = this.objects[secondaryKey]
+          let secondaryObject = this.objects[secondaryKey]
 
-        let xDistance = object.position.x - secondaryObject.position.x
-        let yDistance = object.position.y - secondaryObject.position.y
+          let xDistance = object.position.x - secondaryObject.position.x
+          let yDistance = object.position.y - secondaryObject.position.y
 
-        let hypotenuse = Math.sqrt(xDistance * xDistance + yDistance * yDistance)
+          let hypotenuse = Math.sqrt(xDistance * xDistance + yDistance * yDistance)
 
-        let gravitationalForce = constants.gravitational * object.mass * secondaryObject.mass / Math.pow(hypotenuse, 2)
+          let gravitationalForce = constants.gravitational * object.mass * secondaryObject.mass / Math.pow(hypotenuse, 2)
 
-        let xForce = gravitationalForce * xDistance / hypotenuse
-        let yForce = gravitationalForce * yDistance / hypotenuse
+          let xForce = gravitationalForce * xDistance / hypotenuse
+          let yForce = gravitationalForce * yDistance / hypotenuse
 
-        object.applyForce(new Force(xForce, yForce))
+          object.applyForce(new Force(xForce, yForce))
+        }
       }
 
       // Calulate velocities
